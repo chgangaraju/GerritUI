@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Gerrit Code Review</title>
+<meta content="locale=en_US" name="gwt:property">
+<script language="javascript" type="text/javascript">
+	var gerrit_hostpagedata = {
+		"config" : {
+			"registerUrl" : "https://dev.eclipse.org/site_login/createaccount.php",
+			"reportBugUrl" : "http://code.google.com/p/gerrit/issues/list",
+			"useContributorAgreements" : false,
+			"useContactInfo" : false,
+			"allowRegisterNewEmail" : false,
+			"authType" : "LDAP",
+			"downloadSchemes" : [ "SSH", "ANON_HTTP", "HTTP", "ANON_GIT" ],
+			"downloadCommands" : [ "DEFAULT_DOWNLOADS" ],
+			"gitDaemonUrl" : "git://git.eclipse.org/gitroot/",
+			"sshdAddress" : "git.eclipse.org:29418",
+			"wildProject" : {
+				"name" : "All-Projects"
+			},
+			"approvalTypes" : {
+				"approvalTypes" : [
+						{
+							"category" : {
+								"categoryId" : {
+									"id" : "VRIF"
+								},
+								"name" : "Verified",
+								"abbreviatedName" : "V",
+								"position" : 0,
+								"functionName" : "MaxWithBlock",
+								"copyMinScore" : false,
+								"labelName" : "Verified"
+							},
+							"values" : [ {
+								"key" : {
+									"categoryId" : {
+										"id" : "VRIF"
+									},
+									"value" : -1
+								},
+								"name" : "Fails"
+							}, {
+								"key" : {
+									"categoryId" : {
+										"id" : "VRIF"
+									},
+									"value" : 0
+								},
+								"name" : "No score"
+							}, {
+								"key" : {
+									"categoryId" : {
+										"id" : "VRIF"
+									},
+									"value" : 1
+								},
+								"name" : "Verified"
+							} ],
+							"maxNegative" : -1,
+							"maxPositive" : 1
+						},
+						{
+							"category" : {
+								"categoryId" : {
+									"id" : "CRVW"
+								},
+								"name" : "Code Review",
+								"abbreviatedName" : "R",
+								"position" : 1,
+								"functionName" : "MaxWithBlock",
+								"copyMinScore" : true,
+								"labelName" : "Code-Review"
+							},
+							"values" : [
+									{
+										"key" : {
+											"categoryId" : {
+												"id" : "CRVW"
+											},
+											"value" : -2
+										},
+										"name" : "Do not submit"
+									},
+									{
+										"key" : {
+											"categoryId" : {
+												"id" : "CRVW"
+											},
+											"value" : -1
+										},
+										"name" : "I would prefer that you didn\u0027t submit this"
+									},
+									{
+										"key" : {patchdiv1
+											"categoryId" : {
+												"id" : "CRVW"
+											},
+											"value" : 0
+										},
+										"name" : "No score"
+									},
+									{
+										"key" : {
+											"categoryId" : {
+												"id" : "CRVW"
+											},
+											"value" : 1
+										},
+										"name" : "Looks good to me, but someone else must approve"
+									}, {
+										"key" : {
+											"categoryId" : {
+												"id" : "CRVW"
+											},
+											"value" : 2
+										},
+										"name" : "Looks good to me, approved"
+									} ],
+							"maxNegative" : -2,
+							"maxPositive" : 2
+						}, {
+							"category" : {
+								"categoryId" : {
+									"id" : "IPCL"
+								},
+								"name" : "IP Clean",
+								"abbreviatedName" : "I",
+								"position" : 3,
+								"functionName" : "MaxWithBlock",
+								"copyMinScore" : false,
+								"labelName" : "IP-Clean"
+							},
+							"values" : [ {
+								"key" : {
+									"categoryId" : {
+										"id" : "IPCL"
+									},
+									"value" : -1
+								},
+								"name" : "Unclean IP, do not check in"
+							}, {
+								"key" : {
+									"categoryId" : {
+										"id" : "IPCL"
+									},
+									"value" : 0
+								},
+								"name" : "No score"
+							}, {
+								"key" : {
+									"categoryId" : {
+										"id" : "IPCL"
+									},
+									"value" : 1
+								},
+								"name" : "IP review completed"
+							} ],
+							"maxNegative" : -1,
+							"maxPositive" : 1
+						} ]
+			},
+			"editableAccountFields" : [ "REGISTER_NEW_EMAIL" ],
+			"commentLinks" : [
+					{
+						"find" : "(I[0-9a-f]{8,40})",
+						"replace" : "\u003ca href\u003d\"#/q/$1,n,z\"\u003e$\u0026\u003c/a\u003e"
+					},
+					{
+						"find" : "([Bb]ug:?\\s*#?)(\\d+)",
+						"replace" : "$1\u003ca href\u003d\"https://bugs.eclipse.org/bugs/show_bug.cgi?id\u003d$2\"\u003e$2\u003c/a\u003e"
+					},
+					{
+						"find" : "(CQ:?\\s*#?)(\\d+)",
+						"replace" : "$1\u003ca href\u003d\"https://dev.eclipse.org/ipzilla/show_bug.cgi?id\u003d$2\"\u003e$2\u003c/a\u003e"
+					} ],
+			"documentationAvailable" : true,
+			"testChangeMerge" : false,
+			"anonymousCowardName" : "Anonymous Coward"
+		}
+	};
+	gerrit_hostpagedata.theme = {
+		"backgroundColor" : "#FCFEEF",
+		"topMenuColor" : "#d3d3d3",
+		"textColor" : "#000000",
+		"trimColor" : "#d3d3d3",
+		"selectionColor" : "#FFFFCC",
+		"changeTableOutdatedColor" : "#F08080",
+		"tableOddRowColor" : "transparent",
+		"tableEvenRowColor" : "transparent"
+	};
+</script>
+<script type="text/javascript" src="js/script.js">
+	
+</script>
+<script type="text/javascript" src="js/bootstrap-tab.js">
+	
+</script>
+<script type="text/javascript" src="js/jquery-1.9.1.js">
+	
+</script>
+<script type="text/javascript" src="js/bootstrap.min.js">
+	
+</script>
+
+<link rel="stylesheet" type="text/css" href="bootstrap.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="favicon.ico" rel="icon" type="image/gif">
+<link
+	href="gerrit/gwt/chrome/148F4D132F9025D76E689F77B09F63DD.cache.css"
+	rel="stylesheet">
+</head>
+
+<body onload="go_now()">
+<div id="gerrit_topmenu"></div>
+	<div id="gerrit_header">
+		<div id="header">
+			<div class="eclipse-main" id="header-graphic">
+				<a href="http://www.eclipse.org/"><img alt="" border="0"
+					src="https://dev.eclipse.org/eclipse.org-common/themes/Phoenix/images/eclipse_home_header.jpg"></a>
+				<h1>Eclipse</h1>
+			</div>
+			<div class="eclipse-main-global" id="header-global-holder">
+				<div id="header-global-links">
+					<ul>
+						<li><a class="first_one"
+							href="http://www.eclipse.org/org/foundation/contact.php">Contact</a></li>
+						<li><a href="http://www.eclipse.org/legal/">Legal</a></li>
+					</ul>
+				</div>
+				<div id="header-icons">
+					<a href="http://wiki.eclipse.org/Gerrit"
+						style="color: white; padding-right: 0.5em; vertical-align: top;">What
+						is this?</a><a href="http://live.eclipse.org"><img
+						alt="Eclipse Live" border="0" height="28"
+						src="https://dev.eclipse.org/eclipse.org-common/themes/Phoenix/images/Icon_Live.png"
+						title="Eclipse Live" width="28"></a><a
+						href="http://www.eclipseplugincentral.com"><img
+						alt="Eclipse Plugin Central" border="0" height="28"
+						src="https://dev.eclipse.org/eclipse.org-common/themes/Phoenix/images/Icon_plugin.png"
+						title="Eclipse Plugin Central" width="28"></a><a
+						href="http://www.planeteclipse.org"><img alt="Planet Eclipse"
+						border="0" height="28"
+						src="https://dev.eclipse.org/eclipse.org-common/themes/Phoenix/images/Icon_planet.png"
+						title="Planet Eclipse" width="28"></a>
+				</div>
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+	</div>
+	
+	<div id="gerrit_body">
+	</div>
+	<div
+		style="clear: both; margin-top: 15px; padding-top: 2px; margin-bottom: 15px;">
+		<div id="gerrit_footer">
+			<div id="gerrit_footer">
+				<div id="footer">
+					<ul id="footernav">
+						<li><a href="http://www.eclipse.org/">Home</a></li>
+						<li><a href="http://www.eclipse.org/legal/privacy.php">Privacy
+								Policy</a></li>
+						<li><a href="http://www.eclipse.org/legal/termsofuse.php">Terms
+								of Use</a></li>
+						<li><a href="http://www.eclipse.org/legal/copyright.php">Copyright
+								Agent</a></li>
+						<li><a href="http://www.eclipse.org/legal/">Legal</a></li>
+						<li><a
+							href="http://www.eclipse.org/org/foundation/contact.php">Contact
+								Us</a></li>
+					</ul>
+					<span id="copyright">Copyright © 2012 The Eclipse
+						Foundation. All Rights Reserved.</span>
+				</div>
+			</div>
+		</div>
+		<div id="gerrit_btmmenu" style="clear: both;"></div>
+	</div>
+	<iframe id="__gwt_historyFrame" src="javascript:''"
+		style="position: absolute; width: 0; height: 0; border: 0"
+		tabIndex="-1"></iframe>
+	<script language="javascript" type="text/javascript">
+	<!--
+		function gerrit() {
+			var s, l, t, w = window, d = document, n = 'gerrit', f = d
+					.createElement('iframe');
+			function m() {
+				if (s && l) {
+					var b, i = d.createElement('img');
+					i.src = n + '/clear.cache.gif';
+					b = i.src;
+					b = b.substring(0, b.lastIndexOf('/') + 1);
+					gerrit = null;
+					f.contentWindow.gwtOnLoad(undefined, n, b);
+				}
+			}
+			gerrit.onScriptLoad = function() {
+				s = 1;
+				m();
+			};
+			gerrit.r = function() {
+				l = 1;
+				m();
+			};
+			f.src = "javascript:''";
+			f.id = n;
+			f.style.cssText = 'position:absolute;width:0;height:0;border:none';
+			f.tabIndex = -1;
+			d.body.appendChild(f);
+			f.contentWindow.location.replace(n
+					+ '/088399B6152EAF2E6421B0009916A236.cache.html');
+			d.write('<script defer="defer">gerrit.r()</'+'script>');
+		}
+		gerrit();
+	//-->
+	</script>
+	
+</body>
+</html>
